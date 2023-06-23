@@ -1,0 +1,295 @@
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f4f4f4;
+  width: 100%;
+}
+
+.hide {
+  display: none !important;
+}
+
+.time-table-white-box {
+  background-color: #fff;
+  width: 100%;
+  margin: 2rem auto;
+  max-width: 1100px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.time-table-header {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.time-table-header .tt-save-btn {
+  background-color: #189a37;
+  color: #fff;
+  font-size: 16px;
+  padding: 5px 12px 7px 12px;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.time-table-body {
+  padding: 15px;
+  padding-top: 0;
+}
+
+.time-table-body table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.time-table-body tbody td {
+  border: 1px solid #ddd;
+}
+
+.time-table-body tbody tr > :not(th:first-child, td:first-child) {
+  width: 18%;
+}
+
+.time-table-body tbody tr > :is(th:first-child, td:first-child) {
+  width: 10%;
+}
+
+.time-table-body thead th {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 5px 0 10px;
+  color: #414141;
+  border-bottom: 2px solid #f2f2f2;
+}
+
+.time-table-body tbody td {
+  margin-top: 6px;
+  padding: 2px;
+  font-size: 13px;
+  padding-top: 4px;
+}
+
+.time-table-body tbody tr td:first-child {
+  font-weight: 600;
+  font-size: 20px;
+  color: #414141;
+  padding: 10px;
+  text-align: center;
+}
+
+/* paragraph */
+
+.time-table-body tbody td {
+  position: relative;
+}
+
+.time-table-body tbody td p {
+  width: 100% !important;
+  padding: 5px;
+  margin-bottom: 0;
+}
+
+.time-table-body tbody td p.break {
+  text-align: center;
+}
+
+.time-table-body tbody td p.break :is(.teacher-name, .subject-name) {
+  display: none;
+}
+
+.time-table-body tbody td p.break span.break {
+  display: unset;
+}
+
+.time-table-body tbody td p span.break {
+  font-size: 20px;
+  display: none;
+  margin: 0;
+}
+
+.time-table-body tbody td p .edit-btn {
+  position: absolute;
+  top: 3px;
+  right: 23px;
+  color: #189a37;
+  width: 20px;
+  cursor: pointer;
+  visibility: hidden;
+  font-size: 15px;
+}
+
+.time-table-body tbody td:hover p .edit-btn {
+  visibility: visible;
+}
+
+.time-table-body tbody td p .delete-btn {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  color: #e74c3c;
+  width: 20px;
+  cursor: pointer;
+  visibility: hidden;
+  font-size: 15px;
+}
+
+.time-table-body tbody td:hover p .delete-btn {
+  visibility: visible;
+}
+
+.time-table-body tbody td p :is(.time-from, .time-to) {
+  color: #444444;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.time-table-body tbody td p .teacher-name {
+  color: #353535;
+  font-weight: 500;
+  line-height: 1.6;
+  text-transform: capitalize;
+}
+
+.time-table-body tbody td p .subject-name {
+  color: #a9a9a9;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* form */
+
+.time-table-body tbody td .form {
+  display: block;
+  padding: 10px;
+}
+
+.time-table-body tbody td .form :is(.time, .teacher-name, .subject-name) {
+  display: grid;
+  margin-bottom: 10px;
+}
+
+.time-table-body td .form .time {
+  grid-template-columns: 45% 10% 45%;
+  text-align: center;
+}
+
+.time-table-body td .form .submit {
+  display: flex;
+  justify-content: center;
+}
+
+.time-table-body td .form .save-period-btn {
+  background-color: #36b153;
+  color: #fff;
+  font-size: 13px;
+  padding: 4px 10px 4px 10px;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.time-table-body td .form .save-period-btn:hover {
+  background-color: #189a37;
+}
+
+.time-table-body td .form :is(input[type="text"], select) {
+  outline: none;
+  border: #aaa 1px solid;
+  border-radius: 4px;
+  padding: 3px;
+  width: 100%;
+}
+
+.time-table-body td .form .check-break {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding-bottom: 10px;
+}
+
+.time-table-body td .form .check-break input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+
+.time-table-body td .form .check-break label {
+  padding-left: 5px;
+  user-select: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+.time-table-body tfoot td {
+  text-align: center;
+}
+
+.time-table-body tfoot .add-period-btn {
+  background-color: #189a37;
+  color: #fff;
+  font-size: 13px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+.time-table-body tfoot .add-period-btn:hover {
+  opacity: 1;
+}
+
+.time-table-body tfoot .remove-period-btn {
+  background-color: #189a37;
+  color: #fff;
+  font-size: 13px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+.time-table-body tfoot .remove-period-btn:hover {
+  opacity: 1;
+}
+
+/* Select 2 CSS */
+.select2-results__option--selectable {
+  font-size: 13px;
+}
+
+.select2-container--default .select2-results__option--disabled {
+  font-size: 13px;
+}
+
+.select2-results__option {
+  padding: 3px;
+}
+
+.select2-search--dropdown {
+  padding: 2px;
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field {
+  outline: none;
+  padding: 4px;
+  font-size: 13px;
+}

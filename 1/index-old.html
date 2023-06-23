@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time Table View</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <div class="time-table-white-box">
+
+    <div class="time-table-header">
+      <button class="tt-save-btn"><i class="fa-solid fa-cloud"></i> Save Timetable</button>
+    </div>
+
+    <div class="time-table-body">
+      <table>
+        <tr>
+          <th>Grade Period</th>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thrusday</th>
+          <th>Friday</th>
+        </tr>
+        <tr data-period="1">
+          <td>1</td>
+          <td data-day="monday">
+            <div class="form hide">
+              <div class="time">
+                <input type="time" class="flatpickr" name="time-from" placeholder="Starts At"
+                  data-default-date="12:20 AM">
+                <span>-</span>
+                <input type="time" class="flatpickr" name="time-to" placeholder="Ends At" data-default-date="12:50 PM">
+              </div>
+              <div class="teacher-name">
+                <select name="teacher-name" class="select2">
+                  <option disabled selected>Select Teacher</option>
+                  <option>A</option>
+                  <option>B</option>
+                  <option selected>C</option>
+                  <option>D</option>
+                </select>
+              </div>
+              <div class="subject-name">
+                <select name="subject-name" class="select2">
+                  <option disabled>Select Subject</option>
+                  <option selected>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                </select>
+              </div>
+              <div class="check-break">
+                <input type="checkbox" name="is-break" id="monday-1">
+                <label for="monday-1">is Break</label>
+              </div>
+              <div class="submit">
+                <button class="save-period-btn"><i class="fa-regular fa-floppy-disk"></i> Save Period</button>
+              </div>
+            </div>
+            <p class="info">
+              <span class="edit-btn" title="edit"><i class="fa-solid fa-pencil"></i></span>
+              <span class="delete-btn" title="delete"><i class="fa-solid fa-trash-can"></i></span>
+              <span class="time-from">07:30 AM</span> - <span class="time-to">08:20 AM</span> <br>
+              <span class="break">Break</span>
+              <span class="teacher-name">Mulalo Pretty MUSIAMO</span> <br>
+              <span class="subject-name">Computer Applications Technology</span>
+            </p>
+          </td>
+          <td data-day="tuesday">
+            <div class="form hide">
+              <div class="time">
+                <input type="time" class="flatpickr" name="time-from" placeholder="Starts At"
+                  data-default-date="12:20 AM">
+                <span>-</span>
+                <input type="time" class="flatpickr" name="time-to" placeholder="Ends At" data-default-date="12:50 PM">
+              </div>
+              <div class="teacher-name">
+                <select name="teacher-name" class="select2">
+                  <option disabled>Select Teacher</option>
+                  <option selected>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                </select>
+              </div>
+              <div class="subject-name">
+                <select name="subject-name" class="select2">
+                  <option disabled>Select Subject</option>
+                  <option selected>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                </select>
+              </div>
+              <div class="submit">
+                <button class="save-period-btn"><i class="fa-regular fa-floppy-disk"></i> Save Period</button>
+              </div>
+            </div>
+            <p class="info">
+              <span class="edit-btn" title="edit"><i class="fa-solid fa-pencil"></i></span>
+              <span class="time-from">07:30 AM</span> - <span class="time-to">08:20 AM</span> <br>
+              <span class="break">Break</span>
+              <span class="teacher-name">Mulalo Pretty MUSIAMO</span> <br>
+              <span class="subject-name">Computer Applications Technology</span>
+            </p>
+          </td>
+          <td data-day="wednesday">
+            <div class="form hide">
+              <div class="time">
+                <input type="time" class="flatpickr" name="time-from" placeholder="Starts At"
+                  data-default-date="12:20 AM">
+                <span>-</span>
+                <input type="time" class="flatpickr" name="time-to" placeholder="Ends At" data-default-date="12:50 PM">
+              </div>
+              <div class="teacher-name">
+                <select name="teacher-name" class="select2">
+                  <option disabled>Select Teacher</option>
+                  <option selected>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                </select>
+              </div>
+              <div class="subject-name">
+                <select name="subject-name" class="select2">
+                  <option disabled>Select Subject</option>
+                  <option selected>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                </select>
+              </div>
+              <div class="submit">
+                <button class="save-period-btn"><i class="fa-regular fa-floppy-disk"></i> Save Period</button>
+              </div>
+            </div>
+            <p class="info">
+              <span class="edit-btn" title="edit"><i class="fa-solid fa-pencil"></i></span>
+              <span class="time-from">07:30 AM</span> - <span class="time-to">08:20 AM</span> <br>
+              <span class="teacher-name">Mulalo Pretty MUSIAMO</span> <br>
+              <span class="subject-name">Computer Applications Technology</span>
+            </p>
+          </td>
+          <td data-day="thrusday">
+            <div class="form hide">
+              <div class="time">
+                <input type="time" class="flatpickr" name="time-from" placeholder="Starts At"
+                  data-default-date="12:20 AM">
+                <span>-</span>
+                <input type="time" class="flatpickr" name="time-to" placeholder="Ends At" data-default-date="12:50 PM">
+              </div>
+              <div class="teacher-name">
+                <select name="teacher-name" class="select2">
+                  <option disabled>Select Teacher</option>
+                  <option selected>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                </select>
+              </div>
+              <div class="subject-name">
+                <select name="subject-name" class="select2">
+                  <option disabled>Select Subject</option>
+                  <option selected>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                </select>
+              </div>
+              <div class="submit">
+                <button class="save-period-btn"><i class="fa-regular fa-floppy-disk"></i> Save Period</button>
+              </div>
+            </div>
+            <p class="info">
+              <span class="edit-btn" title="edit"><i class="fa-solid fa-pencil"></i></span>
+              <span class="time-from">07:30 AM</span> - <span class="time-to">08:20 AM</span> <br>
+              <span class="teacher-name">Mulalo Pretty MUSIAMO</span> <br>
+              <span class="subject-name">Computer Applications Technology</span>
+            </p>
+          </td>
+          <td data-day="friday">
+            <div class="form hide">
+              <div class="time">
+                <input type="time" class="flatpickr" name="time-from" placeholder="Starts At"
+                  data-default-date="12:20 AM">
+                <span>-</span>
+                <input type="time" class="flatpickr" name="time-to" placeholder="Ends At" data-default-date="12:50 PM">
+              </div>
+              <div class="teacher-name">
+                <select name="teacher-name" class="select2">
+                  <option disabled>Select Teacher</option>
+                  <option selected>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                </select>
+              </div>
+              <div class="subject-name">
+                <select name="subject-name" class="select2">
+                  <option disabled>Select Subject</option>
+                  <option selected>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                </select>
+              </div>
+              <div class="submit">
+                <button class="save-period-btn"><i class="fa-regular fa-floppy-disk"></i> Save Period</button>
+              </div>
+            </div>
+            <p class="info">
+              <span class="edit-btn" title="edit"><i class="fa-solid fa-pencil"></i></span>
+              <span class="time-from">07:30 AM</span> - <span class="time-to">08:20 AM</span> <br>
+              <span class="teacher-name">Mulalo Pretty MUSIAMO</span> <br>
+              <span class="subject-name">Computer Applications Technology</span>
+            </p>
+          </td>
+        </tr>
+        <tr data-period="2">
+          <td>2</td>
+          <td data-day="monday">
+            <div class="form hide">
+              <div class="time">
+                <input type="time" class="flatpickr" name="time-from" placeholder="Starts At"
+                  data-default-date="12:20 AM">
+                <span>-</span>
+                <input type="time" class="flatpickr" name="time-to" placeholder="Ends At" data-default-date="12:50 PM">
+              </div>
+              <div class="teacher-name">
+                <select name="teacher-name" class="select2">
+                  <option disabled>Select Teacher</option>
+                  <option selected>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                </select>
+              </div>
+              <div class="subject-name">
+                <select name="subject-name" class="select2">
+                  <option disabled>Select Subject</option>
+                  <option selected>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                </select>
+              </div>
+              <div class="submit">
+                <button class="save-period-btn"><i class="fa-regular fa-floppy-disk"></i> Save Period</button>
+              </div>
+            </div>
+            <p class="info">
+              <span class="edit-btn" title="edit"><i class="fa-solid fa-pencil"></i></span>
+              <span class="time-from">07:30 AM</span> - <span class="time-to">08:20 AM</span> <br>
+              <span class="teacher-name">Mulalo Pretty MUSIAMO</span> <br>
+              <span class="subject-name">Computer Applications Technology</span>
+            </p>
+          </td>
+          <td data-day="tuesday">
+            <div class="form hide">
+              <div class="time">
+                <input type="time" class="flatpickr" name="time-from" placeholder="Starts At"
+                  data-default-date="12:20 AM">
+                <span>-</span>
+                <input type="time" class="flatpickr" name="time-to" placeholder="Ends At" data-default-date="12:50 PM">
+              </div>
+              <div class="teacher-name">
+                <select name="teacher-name" class="select2">
+                  <option disabled>Select Teacher</option>
+                  <option selected>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                </select>
+              </div>
+              <div class="subject-name">
+                <select name="subject-name" class="select2">
+                  <option disabled>Select Subject</option>
+                  <option selected>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                </select>
+              </div>
+              <div class="submit">
+                <button class="save-period-btn"><i class="fa-regular fa-floppy-disk"></i> Save Period</button>
+              </div>
+            </div>
+            <p class="info">
+              <span class="edit-btn" title="edit"><i class="fa-solid fa-pencil"></i></span>
+              <span class="time-from">07:30 AM</span> - <span class="time-to">08:20 AM</span> <br>
+              <span class="teacher-name">Mulalo Pretty MUSIAMO</span> <br>
+              <span class="subject-name">Computer Applications Technology</span>
+            </p>
+          </td>
+          <td data-day="wednesday">
+            <div class="form hide">
+              <div class="time">
+                <input type="time" class="flatpickr" name="time-from" placeholder="Starts At"
+                  data-default-date="12:20 AM">
+                <span>-</span>
+                <input type="time" class="flatpickr" name="time-to" placeholder="Ends At" data-default-date="12:50 PM">
+              </div>
+              <div class="teacher-name">
+                <select name="teacher-name" class="select2">
+                  <option disabled>Select Teacher</option>
+                  <option selected>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                </select>
+              </div>
+              <div class="subject-name">
+                <select name="subject-name" class="select2">
+                  <option disabled>Select Subject</option>
+                  <option selected>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                </select>
+              </div>
+              <div class="submit">
+                <button class="save-period-btn"><i class="fa-regular fa-floppy-disk"></i> Save Period</button>
+              </div>
+            </div>
+            <p class="info">
+              <span class="edit-btn" title="edit"><i class="fa-solid fa-pencil"></i></span>
+              <span class="time-from">07:30 AM</span> - <span class="time-to">08:20 AM</span> <br>
+              <span class="teacher-name">Mulalo Pretty MUSIAMO</span> <br>
+              <span class="subject-name">Computer Applications Technology</span>
+            </p>
+          </td>
+          <td data-day="thrusday">
+            <div class="form hide">
+              <div class="time">
+                <input type="time" class="flatpickr" name="time-from" placeholder="Starts At"
+                  data-default-date="12:20 AM">
+                <span>-</span>
+                <input type="time" class="flatpickr" name="time-to" placeholder="Ends At" data-default-date="12:50 PM">
+              </div>
+              <div class="teacher-name">
+                <select name="teacher-name" class="select2">
+                  <option disabled>Select Teacher</option>
+                  <option selected>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                </select>
+              </div>
+              <div class="subject-name">
+                <select name="subject-name" class="select2">
+                  <option disabled>Select Subject</option>
+                  <option selected>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                </select>
+              </div>
+              <div class="submit">
+                <button class="save-period-btn"><i class="fa-regular fa-floppy-disk"></i> Save Period</button>
+              </div>
+            </div>
+            <p class="info">
+              <span class="edit-btn" title="edit"><i class="fa-solid fa-pencil"></i></span>
+              <span class="time-from">07:30 AM</span> - <span class="time-to">08:20 AM</span> <br>
+              <span class="teacher-name">Mulalo Pretty MUSIAMO</span> <br>
+              <span class="subject-name">Computer Applications Technology</span>
+            </p>
+          </td>
+          <td data-day="friday">
+            <div class="form hide">
+              <div class="time">
+                <input type="time" class="flatpickr" name="time-from" placeholder="Starts At"
+                  data-default-date="12:20 AM">
+                <span>-</span>
+                <input type="time" class="flatpickr" name="time-to" placeholder="Ends At" data-default-date="12:50 PM">
+              </div>
+              <div class="teacher-name">
+                <select name="teacher-name" class="select2">
+                  <option disabled>Select Teacher</option>
+                  <option selected>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                </select>
+              </div>
+              <div class="subject-name">
+                <select name="subject-name" class="select2">
+                  <option disabled>Select Subject</option>
+                  <option selected>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                </select>
+              </div>
+              <div class="submit">
+                <button class="save-period-btn"><i class="fa-regular fa-floppy-disk"></i> Save Period</button>
+              </div>
+            </div>
+            <p class="info">
+              <span class="edit-btn" title="edit"><i class="fa-solid fa-pencil"></i></span>
+              <span class="time-from">07:30 AM</span> - <span class="time-to">08:20 AM</span> <br>
+              <span class="teacher-name">Mulalo Pretty MUSIAMO</span> <br>
+              <span class="subject-name">Computer Applications Technology</span>
+            </p>
+          </td>
+        </tr>
+        <tr data-period="3">
+          <td>3</td>
+          <td data-day="monday">
+            <div class="form hide">
+              <div class="time">
+                <input type="time" class="flatpickr" name="time-from" placeholder="Starts At"
+                  data-default-date="12:20 AM">
+                <span>-</span>
+                <input type="time" class="flatpickr" name="time-to" placeholder="Ends At" data-default-date="12:50 PM">
+              </div>
+              <div class="teacher-name">
+                <select name="teacher-name" class="select2">
+                  <option disabled>Select Teacher</option>
+                  <option selected>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                </select>
+              </div>
+              <div class="subject-name">
+                <select name="subject-name" class="select2">
+                  <option disabled>Select Subject</option>
+                  <option selected>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                </select>
+              </div>
+              <div class="submit">
+                <button class="save-period-btn"><i class="fa-regular fa-floppy-disk"></i> Save Period</button>
+              </div>
+            </div>
+            <p class="info">
+              <span class="edit-btn" title="edit"><i class="fa-solid fa-pencil"></i></span>
+              <span class="time-from">07:30 AM</span> - <span class="time-to">08:20 AM</span> <br>
+              <span class="teacher-name">Mulalo Pretty MUSIAMO</span> <br>
+              <span class="subject-name">Computer Applications Technology</span>
+            </p>
+          </td>
+          <td data-day="tuesday">
+            <div class="form hide">
+              <div class="time">
+                <input type="time" class="flatpickr" name="time-from" placeholder="Starts At"
+                  data-default-date="12:20 AM">
+                <span>-</span>
+                <input type="time" class="flatpickr" name="time-to" placeholder="Ends At" data-default-date="12:50 PM">
+              </div>
+              <div class="teacher-name">
+                <select name="teacher-name" class="select2">
+                  <option disabled>Select Teacher</option>
+                  <option selected>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                </select>
+              </div>
+              <div class="subject-name">
+                <select name="subject-name" class="select2">
+                  <option disabled>Select Subject</option>
+                  <option selected>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                </select>
+              </div>
+              <div class="submit">
+                <button class="save-period-btn"><i class="fa-regular fa-floppy-disk"></i> Save Period</button>
+              </div>
+            </div>
+            <p class="info">
+              <span class="edit-btn" title="edit"><i class="fa-solid fa-pencil"></i></span>
+              <span class="time-from">07:30 AM</span> - <span class="time-to">08:20 AM</span> <br>
+              <span class="teacher-name">Mulalo Pretty MUSIAMO</span> <br>
+              <span class="subject-name">Computer Applications Technology</span>
+            </p>
+          </td>
+          <td data-day="wednesday">
+            <div class="form hide">
+              <div class="time">
+                <input type="time" class="flatpickr" name="time-from" placeholder="Starts At"
+                  data-default-date="12:20 AM">
+                <span>-</span>
+                <input type="time" class="flatpickr" name="time-to" placeholder="Ends At" data-default-date="12:50 PM">
+              </div>
+              <div class="teacher-name">
+                <select name="teacher-name" class="select2">
+                  <option disabled>Select Teacher</option>
+                  <option selected>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                </select>
+              </div>
+              <div class="subject-name">
+                <select name="subject-name" class="select2">
+                  <option disabled>Select Subject</option>
+                  <option selected>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                </select>
+              </div>
+              <div class="submit">
+                <button class="save-period-btn"><i class="fa-regular fa-floppy-disk"></i> Save Period</button>
+              </div>
+            </div>
+            <p class="info">
+              <span class="edit-btn" title="edit"><i class="fa-solid fa-pencil"></i></span>
+              <span class="time-from">07:30 AM</span> - <span class="time-to">08:20 AM</span> <br>
+              <span class="teacher-name">Mulalo Pretty MUSIAMO</span> <br>
+              <span class="subject-name">Computer Applications Technology</span>
+            </p>
+          </td>
+          <td data-day="thrusday">
+            <div class="form hide">
+              <div class="time">
+                <input type="time" class="flatpickr" name="time-from" placeholder="Starts At"
+                  data-default-date="12:20 AM">
+                <span>-</span>
+                <input type="time" class="flatpickr" name="time-to" placeholder="Ends At" data-default-date="12:50 PM">
+              </div>
+              <div class="teacher-name">
+                <select name="teacher-name" class="select2">
+                  <option disabled>Select Teacher</option>
+                  <option selected>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                </select>
+              </div>
+              <div class="subject-name">
+                <select name="subject-name" class="select2">
+                  <option disabled>Select Subject</option>
+                  <option selected>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                </select>
+              </div>
+              <div class="submit">
+                <button class="save-period-btn"><i class="fa-regular fa-floppy-disk"></i> Save Period</button>
+              </div>
+            </div>
+            <p class="info">
+              <span class="edit-btn" title="edit"><i class="fa-solid fa-pencil"></i></span>
+              <span class="time-from">07:30 AM</span> - <span class="time-to">08:20 AM</span> <br>
+              <span class="teacher-name">Mulalo Pretty MUSIAMO</span> <br>
+              <span class="subject-name">Computer Applications Technology</span>
+            </p>
+          </td>
+          <td data-day="friday">
+            <div class="form hide">
+              <div class="time">
+                <input type="time" class="flatpickr" name="time-from" placeholder="Starts At"
+                  data-default-date="12:20 AM">
+                <span>-</span>
+                <input type="time" class="flatpickr" name="time-to" placeholder="Ends At" data-default-date="12:50 PM">
+              </div>
+              <div class="teacher-name">
+                <select name="teacher-name" class="select2">
+                  <option disabled>Select Teacher</option>
+                  <option selected>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                </select>
+              </div>
+              <div class="subject-name">
+                <select name="subject-name" class="select2">
+                  <option disabled>Select Subject</option>
+                  <option selected>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                </select>
+              </div>
+              <div class="submit">
+                <button class="save-period-btn"><i class="fa-regular fa-floppy-disk"></i> Save Period</button>
+              </div>
+            </div>
+            <p class="info">
+              <span class="edit-btn" title="edit"><i class="fa-solid fa-pencil"></i></span>
+              <span class="time-from">07:30 AM</span> - <span class="time-to">08:20 AM</span> <br>
+              <span class="teacher-name">Mulalo Pretty MUSIAMO</span> <br>
+              <span class="subject-name">Computer Applications Technology</span>
+            </p>
+          </td>
+        </tr>
+        <tr data-period="4">
+          <td>4</td>
+          <td data-day="monday">
+            <div class="form hide">
+              <div class="time">
+                <input type="time" class="flatpickr" name="time-from" placeholder="Starts At"
+                  data-default-date="12:20 AM">
+                <span>-</span>
+                <input type="time" class="flatpickr" name="time-to" placeholder="Ends At" data-default-date="12:50 PM">
+              </div>
+              <div class="teacher-name">
+                <select name="teacher-name" class="select2">
+                  <option disabled>Select Teacher</option>
+                  <option selected>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                </select>
+              </div>
+              <div class="subject-name">
+                <select name="subject-name" class="select2">
+                  <option disabled>Select Subject</option>
+                  <option selected>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                </select>
+              </div>
+              <div class="submit">
+                <button class="save-period-btn"><i class="fa-regular fa-floppy-disk"></i> Save Period</button>
+              </div>
+            </div>
+            <p class="info">
+              <span class="edit-btn" title="edit"><i class="fa-solid fa-pencil"></i></span>
+              <span class="time-from">07:30 AM</span> - <span class="time-to">08:20 AM</span> <br>
+              <span class="teacher-name">Mulalo Pretty MUSIAMO</span> <br>
+              <span class="subject-name">Computer Applications Technology</span>
+            </p>
+          </td>
+          <td data-day="tuesday">
+            <div class="form hide">
+              <div class="time">
+                <input type="time" class="flatpickr" name="time-from" placeholder="Starts At"
+                  data-default-date="12:20 AM">
+                <span>-</span>
+                <input type="time" class="flatpickr" name="time-to" placeholder="Ends At" data-default-date="12:50 PM">
+              </div>
+              <div class="teacher-name">
+                <select name="teacher-name" class="select2">
+                  <option disabled>Select Teacher</option>
+                  <option selected>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                </select>
+              </div>
+              <div class="subject-name">
+                <select name="subject-name" class="select2">
+                  <option disabled>Select Subject</option>
+                  <option selected>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                </select>
+              </div>
+              <div class="submit">
+                <button class="save-period-btn"><i class="fa-regular fa-floppy-disk"></i> Save Period</button>
+              </div>
+            </div>
+            <p class="info">
+              <span class="edit-btn" title="edit"><i class="fa-solid fa-pencil"></i></span>
+              <span class="time-from">07:30 AM</span> - <span class="time-to">08:20 AM</span> <br>
+              <span class="teacher-name">Mulalo Pretty MUSIAMO</span> <br>
+              <span class="subject-name">Computer Applications Technology</span>
+            </p>
+          </td>
+          <td data-day="wednesday">
+            <div class="form hide">
+              <div class="time">
+                <input type="time" class="flatpickr" name="time-from" placeholder="Starts At"
+                  data-default-date="12:20 AM">
+                <span>-</span>
+                <input type="time" class="flatpickr" name="time-to" placeholder="Ends At" data-default-date="12:50 PM">
+              </div>
+              <div class="teacher-name">
+                <select name="teacher-name" class="select2">
+                  <option disabled>Select Teacher</option>
+                  <option selected>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                </select>
+              </div>
+              <div class="subject-name">
+                <select name="subject-name" class="select2">
+                  <option disabled>Select Subject</option>
+                  <option selected>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                </select>
+              </div>
+              <div class="submit">
+                <button class="save-period-btn"><i class="fa-regular fa-floppy-disk"></i> Save Period</button>
+              </div>
+            </div>
+            <p class="info">
+              <span class="edit-btn" title="edit"><i class="fa-solid fa-pencil"></i></span>
+              <span class="time-from">07:30 AM</span> - <span class="time-to">08:20 AM</span> <br>
+              <span class="teacher-name">Mulalo Pretty MUSIAMO</span> <br>
+              <span class="subject-name">Computer Applications Technology</span>
+            </p>
+          </td>
+          <td data-day="thrusday">
+            <div class="form hide">
+              <div class="time">
+                <input type="time" class="flatpickr" name="time-from" placeholder="Starts At"
+                  data-default-date="12:20 AM">
+                <span>-</span>
+                <input type="time" class="flatpickr" name="time-to" placeholder="Ends At" data-default-date="12:50 PM">
+              </div>
+              <div class="teacher-name">
+                <select name="teacher-name" class="select2">
+                  <option disabled>Select Teacher</option>
+                  <option selected>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                </select>
+              </div>
+              <div class="subject-name">
+                <select name="subject-name" class="select2">
+                  <option disabled>Select Subject</option>
+                  <option selected>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                </select>
+              </div>
+              <div class="submit">
+                <button class="save-period-btn"><i class="fa-regular fa-floppy-disk"></i> Save Period</button>
+              </div>
+            </div>
+            <p class="info">
+              <span class="edit-btn" title="edit"><i class="fa-solid fa-pencil"></i></span>
+              <span class="time-from">07:30 AM</span> - <span class="time-to">08:20 AM</span> <br>
+              <span class="teacher-name">Mulalo Pretty MUSIAMO</span> <br>
+              <span class="subject-name">Computer Applications Technology</span>
+            </p>
+          </td>
+          <td data-day="friday">
+            <div class="form hide">
+              <div class="time">
+                <input type="time" class="flatpickr" name="time-from" placeholder="Starts At"
+                  data-default-date="12:20 AM">
+                <span>-</span>
+                <input type="time" class="flatpickr" name="time-to" placeholder="Ends At" data-default-date="12:50 PM">
+              </div>
+              <div class="teacher-name">
+                <select name="teacher-name" class="select2">
+                  <option disabled>Select Teacher</option>
+                  <option selected>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                </select>
+              </div>
+              <div class="subject-name">
+                <select name="subject-name" class="select2">
+                  <option disabled>Select Subject</option>
+                  <option selected>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                </select>
+              </div>
+              <div class="submit">
+                <button class="save-period-btn"><i class="fa-regular fa-floppy-disk"></i> Save Period</button>
+              </div>
+            </div>
+            <p class="info">
+              <span class="edit-btn" title="edit"><i class="fa-solid fa-pencil"></i></span>
+              <span class="time-from">07:30 AM</span> - <span class="time-to">08:20 AM</span> <br>
+              <span class="teacher-name">Mulalo Pretty MUSIAMO</span> <br>
+              <span class="subject-name">Computer Applications Technology</span>
+            </p>
+          </td>
+        </tr>
+        <tr data-period="5">
+          <td>5</td>
+          <td data-day="monday">
+            <div class="form hide">
+              <div class="time">
+                <input type="time" class="flatpickr" name="time-from" placeholder="Starts At"
+                  data-default-date="12:20 AM">
+                <span>-</span>
+                <input type="time" class="flatpickr" name="time-to" placeholder="Ends At" data-default-date="12:50 PM">
+              </div>
+              <div class="teacher-name">
+                <select name="teacher-name" class="select2">
+                  <option disabled>Select Teacher</option>
+                  <option selected>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                </select>
+              </div>
+              <div class="subject-name">
+                <select name="subject-name" class="select2">
+                  <option disabled>Select Subject</option>
+                  <option selected>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                </select>
+              </div>
+              <div class="submit">
+                <button class="save-period-btn"><i class="fa-regular fa-floppy-disk"></i> Save Period</button>
+              </div>
+            </div>
+            <p class="info">
+              <span class="edit-btn" title="edit"><i class="fa-solid fa-pencil"></i></span>
+              <span class="time-from">07:30 AM</span> - <span class="time-to">08:20 AM</span> <br>
+              <span class="teacher-name">Mulalo Pretty MUSIAMO</span> <br>
+              <span class="subject-name">Computer Applications Technology</span>
+            </p>
+          </td>
+          <td data-day="tuesday">
+            <div class="form hide">
+              <div class="time">
+                <input type="time" class="flatpickr" name="time-from" placeholder="Starts At"
+                  data-default-date="12:20 AM">
+                <span>-</span>
+                <input type="time" class="flatpickr" name="time-to" placeholder="Ends At" data-default-date="12:50 PM">
+              </div>
+              <div class="teacher-name">
+                <select name="teacher-name" class="select2">
+                  <option disabled>Select Teacher</option>
+                  <option selected>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                </select>
+              </div>
+              <div class="subject-name">
+                <select name="subject-name" class="select2">
+                  <option disabled>Select Subject</option>
+                  <option selected>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                </select>
+              </div>
+              <div class="submit">
+                <button class="save-period-btn"><i class="fa-regular fa-floppy-disk"></i> Save Period</button>
+              </div>
+            </div>
+            <p class="info">
+              <span class="edit-btn" title="edit"><i class="fa-solid fa-pencil"></i></span>
+              <span class="time-from">07:30 AM</span> - <span class="time-to">08:20 AM</span> <br>
+              <span class="teacher-name">Mulalo Pretty MUSIAMO</span> <br>
+              <span class="subject-name">Computer Applications Technology</span>
+            </p>
+          </td>
+          <td data-day="wednesday">
+            <div class="form hide">
+              <div class="time">
+                <input type="time" class="flatpickr" name="time-from" placeholder="Starts At"
+                  data-default-date="12:20 AM">
+                <span>-</span>
+                <input type="time" class="flatpickr" name="time-to" placeholder="Ends At" data-default-date="12:50 PM">
+              </div>
+              <div class="teacher-name">
+                <select name="teacher-name" class="select2">
+                  <option disabled>Select Teacher</option>
+                  <option selected>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                </select>
+              </div>
+              <div class="subject-name">
+                <select name="subject-name" class="select2">
+                  <option disabled>Select Subject</option>
+                  <option selected>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                </select>
+              </div>
+              <div class="submit">
+                <button class="save-period-btn"><i class="fa-regular fa-floppy-disk"></i> Save Period</button>
+              </div>
+            </div>
+            <p class="info">
+              <span class="edit-btn" title="edit"><i class="fa-solid fa-pencil"></i></span>
+              <span class="time-from">07:30 AM</span> - <span class="time-to">08:20 AM</span> <br>
+              <span class="teacher-name">Mulalo Pretty MUSIAMO</span> <br>
+              <span class="subject-name">Computer Applications Technology</span>
+            </p>
+          </td>
+          <td data-day="thrusday">
+            <div class="form hide">
+              <div class="time">
+                <input type="time" class="flatpickr" name="time-from" placeholder="Starts At"
+                  data-default-date="12:20 AM">
+                <span>-</span>
+                <input type="time" class="flatpickr" name="time-to" placeholder="Ends At" data-default-date="12:50 PM">
+              </div>
+              <div class="teacher-name">
+                <select name="teacher-name" class="select2">
+                  <option disabled>Select Teacher</option>
+                  <option selected>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                </select>
+              </div>
+              <div class="subject-name">
+                <select name="subject-name" class="select2">
+                  <option disabled>Select Subject</option>
+                  <option selected>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                </select>
+              </div>
+              <div class="submit">
+                <button class="save-period-btn"><i class="fa-regular fa-floppy-disk"></i> Save Period</button>
+              </div>
+            </div>
+            <p class="info">
+              <span class="edit-btn" title="edit"><i class="fa-solid fa-pencil"></i></span>
+              <span class="time-from">07:30 AM</span> - <span class="time-to">08:20 AM</span> <br>
+              <span class="teacher-name">Mulalo Pretty MUSIAMO</span> <br>
+              <span class="subject-name">Computer Applications Technology</span>
+            </p>
+          </td>
+          <td data-day="friday">
+            <div class="form hide">
+              <div class="time">
+                <input type="time" class="flatpickr" name="time-from" placeholder="Starts At"
+                  data-default-date="12:20 AM">
+                <span>-</span>
+                <input type="time" class="flatpickr" name="time-to" placeholder="Ends At" data-default-date="12:50 PM">
+              </div>
+              <div class="teacher-name">
+                <select name="teacher-name" class="select2">
+                  <option disabled>Select Teacher</option>
+                  <option selected>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                  <option>Mulalo Pretty MUSIAMO</option>
+                </select>
+              </div>
+              <div class="subject-name">
+                <select name="subject-name" class="select2">
+                  <option disabled>Select Subject</option>
+                  <option selected>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                  <option>Computer Application Technology</option>
+                </select>
+              </div>
+              <div class="submit">
+                <button class="save-period-btn"><i class="fa-regular fa-floppy-disk"></i> Save Period</button>
+              </div>
+            </div>
+            <p class="info">
+              <span class="edit-btn" title="edit"><i class="fa-solid fa-pencil"></i></span>
+              <span class="time-from">07:30 AM</span> - <span class="time-to">08:20 AM</span> <br>
+              <span class="teacher-name">Mulalo Pretty MUSIAMO</span> <br>
+              <span class="subject-name">Computer Applications Technology</span>
+            </p>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="./script.js"></script>
+  <script src="./timetable.js"></script>
+
+</body>
+
+</html>

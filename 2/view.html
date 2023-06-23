@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time Table View</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <main class="tt-white-box">
+    <div class="tt-header">
+      <button class="edit-btn" data-js-select="edit-timetable">
+        <i class="fa-regular fa-pen-to-square"></i> Edit Timetable
+      </button>
+    </div>
+    <div class="tt-body">
+      <div class="table-wrapper">
+        <table class="">
+          <thead data-js-select="thead">
+            <tr>
+              <th>
+                <div class="cell-wrapper">
+                  <p>Period</p>
+                </div>
+              </th>
+              <th>
+                <div class="cell-wrapper">
+                  <div class="options">
+                    <button class="menu-btn"><i class="fa-solid fa-ellipsis-vertical"></i>
+                      <nav class="menu-list hide">
+                        <ul>
+                          <li>Add column to left</li>
+                          <li>Add column to right</li>
+                          <li>Remove this column</li>
+                        </ul>
+                      </nav>
+                    </button>
+                  </div>
+                  <div class="info-view">
+                    <p class="day">Monday</p>
+                  </div>
+                  <div class="edit-view">
+                    <input type="text" placeholder="Enter Day">
+                  </div>
+                </div>
+              </th>
+              <th>
+                <div class="cell-wrapper">
+                  <div class="options">
+                    <button class="menu-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                    <nav class="menu-list hide">
+                      <ul>
+                        <li>Add column to left</li>
+                        <li>Add column to right</li>
+                        <li>Remove this column</li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="info-view">
+                    </nav>
+                    <p class="day">Tuesday</p>
+                  </div>
+                  <div class="edit-view">
+                    <input type="text" placeholder="Enter Day">
+                  </div>
+                </div>
+              </th>
+              <th>
+                <div class="cell-wrapper">
+                  <div class="options">
+                    <button class="menu-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                    <nav class="menu-list hide">
+                      <ul>
+                        <li>Add column to left</li>
+                        <li>Add column to right</li>
+                        <li>Remove this column</li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="info-view">
+                    <p class="day">Wednesday</p>
+                  </div>
+                  <div class="edit-view">
+                    <input type="text" placeholder="Enter Day">
+                  </div>
+                </div>
+              </th>
+              <th>
+                <div class="cell-wrapper">
+                  <div class="options">
+                    <button class="menu-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                    <nav class="menu-list hide">
+                      <ul>
+                        <li>Add column to left</li>
+                        <li>Add column to right</li>
+                        <li>Remove this column</li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="info-view">
+                    <p class="day">Thursday</p>
+                  </div>
+                  <div class="edit-view">
+                    <input type="text" placeholder="Enter Day">
+                  </div>
+                </div>
+              </th>
+              <th>
+                <div class="cell-wrapper">
+                  <div class="options">
+                    <button class="menu-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                    <nav class="menu-list hide">
+                      <ul>
+                        <li>Add column to left</li>
+                        <li>Add column to right</li>
+                        <li>Remove this column</li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="info-view">
+                    <p class="day">Friday</p>
+                  </div>
+                  <div class="edit-view">
+                    <input type="text" placeholder="Enter Day">
+                  </div>
+                </div>
+              </th>
+              <th>
+                <div class="cell-wrapper">
+                  <div class="options">
+                    <button class="menu-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                    <nav class="menu-list hide">
+                      <ul>
+                        <li>Add column to left</li>
+                        <li>Add column to right</li>
+                        <li>Remove this column</li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="info-view">
+                    <p class="day">Saturday</p>
+                  </div>
+                  <div class="edit-view">
+                    <input type="text" placeholder="Enter Day">
+                  </div>
+                </div>
+              </th>
+
+            </tr>
+          </thead>
+
+          <tbody data-js-select="tbody">
+            <tr>
+              <th>
+                <div class="cell-wrapper">
+                  <div class="options">
+                    <button class="menu-btn"><i class="fa-solid fa-ellipsis-vertical"></i>
+                      <nav class="menu-list">
+                        <ul>
+                          <li>Add Row Above</li>
+                          <li>Add Row Below</li>
+                          <li>Remove This Row</li>
+                        </ul>
+                      </nav>
+                    </button>
+                  </div>
+                  <div class="info-view">
+                    <h2 class="period">1</h2>
+                    <p class="fromTime">from <span>07:30 AM</span></p>
+                    <p class="toTime">to <span>08:30 AM</span></p>
+                  </div>
+                  <div class="edit-view">
+                    <input type="text" placeholder="Enter Period" value="1">
+                    <input type="time" class="flatpickr" placeholder="From Time" data-default-date="07:30 AM">
+                    <input type="time" class="flatpickr" placeholder="To Time" data-default-date="08:30 AM">
+                  </div>
+                </div>
+              </th>
+              <td>
+                <div class="cell-wrapper">
+                  <div class="info-view">
+                    <h2 class="break">Break</h2>
+                    <h2 class="free">Free</h2>
+                    <p class="time">07:30 AM to 09:30 AM</p>
+                    <p class="subject">Computer Science</p>
+                    <p class="teacher">John Brad Doe</p>
+                  </div>
+                  <div class="edit-view time-updated">
+                    <div class="time">
+                      <input type="time" class="flatpickr" data-default-date="07:30 AM">
+                      <span>-</span>
+                      <input type="time" class="flatpickr" data-default-date="08:30 AM">
+                    </div>
+                    <div class="subject">
+                      <select class="select2">
+                        <option value="">Select Subject</option>
+                        <option>Computer Application Technology</option>
+                        <option>Computer Application Technology</option>
+                        <option>Computer Application Technology</option>
+                      </select>
+                    </div>
+                    <div class="teacher">
+                      <select class="select2">
+                        <option value="">Select Teacher</option>
+                        <option>Computer Application Technology</option>
+                        <option>Computer Application Technology</option>
+                        <option>Computer Application Technology</option>
+                      </select>
+                    </div>
+                    <div class="break">
+                      <input type="checkbox" id="unique">
+                      <label for="unique">is Break</label>
+                    </div>
+                    <div class="free">
+                      <input type="checkbox" id="unique">
+                      <label for="unique">is Free Period</label>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+              </td>
+              <td>
+              </td>
+              <td>
+              </td>
+              <td>
+              </td>
+              <td>
+              </td>
+
+            </tr>
+            <tr>
+              <th>
+                <div class="cell-wrapper">
+                  <div class="options">
+                    <button class="menu-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                    <nav class="menu-list hide">
+                      <ul>
+                        <li>Add Row Above</li>
+                        <li>Add Row Below</li>
+                        <li>Remove This Row</li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="info-view">
+                    <h2 class="period">2</h2>
+                    <p class="fromTime">from <span>08:30 AM</span></p>
+                    <p class="toTime">to <span>09:30 AM</span></p>
+                  </div>
+                  <div class="edit-view">
+                    <input type="text" placeholder="Enter Period" value="2">
+                    <input type="time" class="flatpickr" placeholder="From Time" data-default-date="08:30 AM">
+                    <input type="time" class="flatpickr" placeholder="To Time" data-default-date="09:30 AM">
+                  </div>
+                </div>
+              </th>
+              <td>Lorem, ipsum.</td>
+              <td>Lorem, ipsum.</td>
+              <td>Lorem, ipsum.</td>
+              <td>Lorem, ipsum.</td>
+              <td>Lorem, ipsum.</td>
+              <td>Lorem, ipsum.</td>
+            </tr>
+            <tr>
+              <th>
+                <div class="cell-wrapper">
+                  <div class="options">
+                    <button class="menu-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                    <nav class="menu-list hide">
+                      <ul>
+                        <li>Add Row Above</li>
+                        <li>Add Row Below</li>
+                        <li>Remove This Row</li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="info-view">
+                    <h2 class="period">3</h2>
+                    <p class="fromTime">from <span>09:30 AM</span></p>
+                    <p class="toTime">to <span>10:30 AM</span></p>
+                  </div>
+                  <div class="edit-view">
+                    <input type="text" placeholder="Enter Period" value="3">
+                    <input type="time" class="flatpickr" placeholder="From Time" data-default-date="09:30 AM">
+                    <input type="time" class="flatpickr" placeholder="To Time" data-default-date="10:30 AM">
+                  </div>
+                </div>
+              </th>
+              <td>Lorem, ipsum.</td>
+              <td>Lorem, ipsum.</td>
+              <td>Lorem, ipsum.</td>
+              <td>Lorem, ipsum.</td>
+              <td>Lorem, ipsum.</td>
+              <td>Lorem, ipsum.</td>
+            </tr>
+            <tr>
+              <th>
+                <div class="cell-wrapper">
+                  <div class="options">
+                    <button class="menu-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                    <nav class="menu-list hide">
+                      <ul>
+                        <li>Add Row Above</li>
+                        <li>Add Row Below</li>
+                        <li>Remove This Row</li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="info-view">
+                    <h2 class="period">Break</h2>
+                    <p class="fromTime">from <span>10:30 AM</span></p>
+                    <p class="toTime">to <span>11:00 AM</span></p>
+                  </div>
+                  <div class="edit-view">
+                    <input type="text" placeholder="Enter Period" value="Break">
+                    <input type="time" class="flatpickr" placeholder="From Time" data-default-date="10:30 AM">
+                    <input type="time" class="flatpickr" placeholder="To Time" data-default-date="11:00 AM">
+                  </div>
+                </div>
+              </th>
+              <td>Lorem, ipsum.</td>
+              <td>Lorem, ipsum.</td>
+              <td>Lorem, ipsum.</td>
+              <td>Lorem, ipsum.</td>
+              <td>Lorem, ipsum.</td>
+              <td>Lorem, ipsum.</td>
+            </tr>
+            <tr>
+              <th>
+                <div class="cell-wrapper">
+                  <div class="options">
+                    <button class="menu-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                    <nav class="menu-list hide">
+                      <ul>
+                        <li>Add Row Above</li>
+                        <li>Add Row Below</li>
+                        <li>Remove This Row</li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="info-view">
+                    <h2 class="period">4</h2>
+                    <p class="fromTime">from <span>11:00 AM</span></p>
+                    <p class="toTime">to <span>12:00 PM</span></p>
+                  </div>
+                  <div class="edit-view">
+                    <input type="text" placeholder="Enter Period" value="4">
+                    <input type="time" class="flatpickr" placeholder="From Time" data-default-date="11:00 AM">
+                    <input type="time" class="flatpickr" placeholder="To Time" data-default-date="12:00 AM">
+                  </div>
+                </div>
+              </th>
+              <td>Lorem, ipsum.</td>
+              <td>Lorem, ipsum.</td>
+              <td>Lorem, ipsum.</td>
+              <td>Lorem, ipsum.</td>
+              <td>Lorem, ipsum.</td>
+              <td>Lorem, ipsum.</td>
+            </tr>
+            <tr>
+              <th>
+                <div class="cell-wrapper">
+                  <div class="options">
+                    <button class="menu-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                    <nav class="menu-list hide">
+                      <ul>
+                        <li>Add Row Above</li>
+                        <li>Add Row Below</li>
+                        <li>Remove This Row</li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="info-view">
+                    <h2 class="period">5</h2>
+                    <p class="fromTime">from <span>12:00 PM</span></p>
+                    <p class="toTime">to <span>01:00 PM</span></p>
+                  </div>
+                  <div class="edit-view">
+                    <input type="text" placeholder="Enter Period" value="5">
+                    <input type="time" class="flatpickr" placeholder="From Time" data-default-date="12:00 PM">
+                    <input type="time" class="flatpickr" placeholder="To Time" data-default-date="01:00 PM">
+                  </div>
+                </div>
+              </th>
+              <td>Lorem, ipsum.</td>
+              <td>Lorem, ipsum.</td>
+              <td>Lorem, ipsum.</td>
+              <td>Lorem, ipsum.</td>
+              <td>Lorem, ipsum.</td>
+              <td>Lorem, ipsum.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="tt-footer">
+      <button class="save-btn" data-js-select="save-timetable">
+        <i class="fa-solid fa-cloud"></i> Save Timetable
+      </button>
+    </div>
+  </main>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <!-- <script src="./script.js"></script> -->
+  <!-- <script src="./timetable.js"></script> -->
+
+  <script>
+    document.querySelector('.edit-btn').addEventListener('click', () => document.querySelector('table').classList.add('edit'));
+
+    $('.select2').select2();
+    flatpickr('.flatpickr', {
+      dateFormat: "h:i K",
+      enableTime: true,
+      noCalendar: true
+    });
+  </script>
+
+</body>
+
+</html>
