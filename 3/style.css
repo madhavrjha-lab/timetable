@@ -1,0 +1,498 @@
+/* Global CSS */
+
+:root {
+  --light-blue: #090e6d;
+  --dark-blue: #1b1464;
+  --white: #ecf0f1;
+  --black: #222f3e;
+  --gray: #576574;
+  --border-color: #c8d6e5;
+}
+
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--white);
+  width: 100%;
+}
+
+/* For this page only */
+
+.tt-white-box :is(button, input, select) {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  padding: 0;
+  border-radius: 3px;
+  user-select: none;
+}
+
+.tt-white-box label {
+  user-select: none;
+}
+
+.tt-white-box :is(h1, h2, h3, h4, h5, h6, p) {
+  margin-bottom: 0;
+}
+
+.tt-white-box button {
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.tt-white-box a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+.tt-white-box .hide {
+  display: none;
+}
+
+/* White Box Structure */
+
+.tt-white-box {
+  background-color: white;
+  max-width: 1100px;
+  width: 100%;
+  margin: 2rem auto;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+/* TT Header, Footer and Their Buttons */
+
+.tt-header,
+.tt-footer {
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: end;
+}
+
+:is(.tt-header, .tt-footer) button {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  padding: 4px 8px;
+}
+
+:is(.tt-header, .tt-footer) button:hover {
+  background-color: var(--light-blue);
+}
+
+/* TT Body and Table Wrapper, and Overflow Scrollbar */
+
+.tt-body {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tt-body .table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.tt-body .table-wrapper::-webkit-scrollbar {
+  height: 6px;
+  border-radius: 4px;
+}
+
+.tt-body .table-wrapper::-webkit-scrollbar-track {
+  background: var(--white);
+  border-radius: 4px;
+}
+
+.tt-body .table-wrapper::-webkit-scrollbar-thumb {
+  background: #aaa;
+  border-radius: 4px;
+}
+
+.tt-body .table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+/* Table, Thead, and Tbody */
+
+.tt-body table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tt-body :is(td, th) {
+  border: 1px solid #d0d0d0;
+  padding: 10px 5px;
+  width: 150px;
+  min-width: 150px;
+  min-width: 150px;
+}
+
+.tt-body table.edit :is(td, th) {
+  border: 1.5px solid var(--dark-blue);
+}
+
+/* Cell Wrapper */
+
+.tt-body .cell-wrapper {
+  display: block;
+}
+
+.tt-body .cell-wrapper > p {
+  text-align: center;
+  color: var(--dark-blue);
+}
+
+/* Thead Info View */
+
+.tt-body thead th {
+  font-weight: 500;
+}
+
+.tt-body :is(thead, tbody) :is(th, td) {
+  position: relative;
+}
+
+.tt-body thead .info-view p.day {
+  text-align: left;
+  padding-left: 10px;
+  color: var(--dark-blue);
+}
+
+/* Options */
+
+.tt-body table.edit .cell-wrapper .options {
+  min-height: 30px;
+}
+
+/* Menu Button */
+
+.tt-body th:hover .options .menu-btn,
+.tt-body td:hover .options .menu-btn {
+  display: unset;
+}
+
+.tt-body .options .menu-btn {
+  /* display: none; */
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  padding: 3px 11px;
+  border-radius: 50%;
+  /* border: 1px solid #d0d0d0; */
+  background: transparent;
+  color: inherit;
+}
+
+.tt-body .options .menu-btn:hover {
+  background-color: #eee;
+}
+
+/* Menu List */
+
+.tt-body .options .menu-btn:hover .menu-list {
+  transform: scale(1);
+}
+
+.tt-body .options .menu-list {
+  transform: scale(0);
+  position: absolute;
+  right: 17px;
+  top: 14px;
+  z-index: 1;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  text-align: right;
+  transform-origin: top right;
+  transition: all 0.3s ease;
+}
+
+.tt-body tbody .options .menu-list {
+  left: 17px;
+  right: unset;
+  z-index: 100;
+  transform-origin: left top;
+  text-align: left;
+}
+
+.tt-body .options .menu-list ul {
+  list-style: none;
+  padding-left: 0;
+  font-weight: normal;
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+.tt-body .options .menu-list li {
+  cursor: pointer;
+  min-width: 150px;
+  border-bottom: 1px solid #ccc;
+  padding: 6px 10px;
+}
+
+.tt-body .options .menu-list li:hover {
+  background-color: #eee;
+}
+
+.tt-body .options .menu-list li:last-child {
+  border-bottom: none;
+}
+
+.tt-body .options .menu-list li i {
+  min-width: 14px;
+}
+
+/* Thead Edit View */
+
+.tt-body table.edit thead .edit-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.tt-body thead .edit-view input {
+  text-align: left;
+  padding: 4px 10px;
+  width: 90%;
+  border: 1px solid #aaa;
+}
+
+/* Tbody Period Info View */
+
+.tt-body tbody th {
+  color: var(--dark-blue);
+  font-weight: 500;
+}
+
+.tt-body tbody th .info-view {
+  flex-direction: column;
+}
+
+.tt-body tbody th .info-view h2.period {
+  text-align: center;
+  font-size: 20px;
+}
+
+.tt-body tbody th .info-view p {
+  font-weight: light;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Time Table Period Edit View */
+
+.tt-body tbody th .edit-view {
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.tt-body tbody th .edit-view input[type="text"] {
+  text-align: left;
+  padding: 4px 10px;
+  width: 90%;
+  border: 1px solid #aaa;
+}
+
+.tt-body tbody th .edit-view input[type="text"].error {
+  border: 1.5px solid red;
+}
+
+/* Time Table Cell - Info View */
+
+.tt-body tbody td .info-view {
+  color: var(--light-blue);
+  flex-direction: column;
+}
+
+.tt-body tbody td .info-view .break {
+  display: none;
+  text-align: center;
+  font-size: 25px;
+}
+
+.tt-body tbody td .info-view .free {
+  display: none;
+  text-align: center;
+  font-size: 25px;
+}
+
+.tt-body tbody td .info-view .time {
+  display: none;
+  font-size: 12px;
+}
+
+.tt-body tbody td .info-view .teacher {
+  background-color: #424464;
+  width: max-content;
+  color: var(--white);
+  font-size: 12px;
+  padding: 3px 5px;
+  border-radius: 4px;
+}
+
+.tt-body tbody td .info-view .subject {
+  font-size: 14px;
+}
+
+/* Time Updated */
+.tt-body tbody td .info-view.time-updated .time {
+  display: block;
+}
+
+/* Free */
+.tt-body tbody td .info-view.free .free {
+  display: block;
+}
+
+.tt-body tbody td .info-view.free :is(.subject, .teacher) {
+  display: none;
+}
+
+/* Time Updated and Free */
+
+.tt-body tbody td .info-view.free.time-updated .time {
+  text-align: center;
+}
+
+/* Break */
+.tt-body tbody td .info-view.break .break {
+  display: block;
+}
+
+.tt-body tbody td .info-view.break :is(.subject, .teacher) {
+  display: none;
+}
+
+/* Time Updated and Break */
+.tt-body tbody td .info-view.break.time-updated :is(.time, .break) {
+  display: block;
+}
+
+.tt-body tbody td .info-view.break.time-updated .time {
+  text-align: center;
+}
+
+/* Time Table Cell - Edit View */
+
+.tt-body tbody td .edit-view {
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.tt-body tbody td .edit-view .time {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tt-body tbody td .edit-view .time input {
+  text-align: left;
+  padding: 4px 10px;
+  width: 47%;
+  border: 1px solid #aaa;
+}
+
+.tt-body tbody td .edit-view :is(.subject, .teacher) {
+  width: 90%;
+}
+
+.tt-body tbody td .edit-view .break {
+  width: 90%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+  text-align: left;
+}
+
+.tt-body tbody td .edit-view .free {
+  width: 90%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+  text-align: left;
+}
+
+/* Break */
+.tt-body tbody td .edit-view.break {
+}
+
+/* Time Updated */
+.tt-body tbody td .edit-view.time-updated .time {
+  display: flex;
+}
+
+/* Time updated and Break */
+.tt-body tbody td .edit-view.time-updated.break {
+}
+
+/* Table on Edit view & without edit View */
+
+.tt-body table .info-view {
+  display: flex;
+}
+
+.tt-body table .edit-view {
+  display: none;
+}
+
+.tt-body table.edit :is(td, th) {
+  width: 180px;
+  min-width: 200px;
+  max-width: 200px;
+}
+
+.tt-body table.edit tr > th:first-child {
+  width: 120px;
+  min-width: 120px;
+  max-width: 120px;
+}
+
+.tt-body table.edit .info-view {
+  display: none;
+}
+
+.tt-body table.edit .edit-view {
+  display: flex;
+}
+
+/* Select2 CSS */
+
+.select2-results__option--selectable {
+  font-size: 13px;
+}
+
+.select2-container--default .select2-results__option--disabled {
+  font-size: 13px;
+}
+
+.select2-results__option {
+  padding: 3px;
+}
+
+.select2-search--dropdown {
+  padding: 2px;
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field {
+  outline: none;
+  padding: 4px;
+  font-size: 13px;
+}
+
+.select2-container {
+  width: 100% !important;
+}
