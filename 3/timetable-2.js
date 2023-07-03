@@ -25,6 +25,9 @@
   - Set Different Color Block for Teachers (done)
   - Sort the Teachers and Subjects
   - Map the Teachers with Colors (done)
+  - Fix the Time Picker in Mobile View (done)
+  - Add the Free Title when it is checked As Free
+  - Implement the Shortcuts (Copy Focused [Teacher, Sbject, Break, Free] To [Row, Column, All] Inputs) (REMAINING)
 
   Add Some Style
    - View Timetable to Preview (done)
@@ -36,6 +39,7 @@
 
   Add Some Validation
    - Highlight Period Title if it is repeated or null (done)
+   - Disabled All the fields when there is error (done)
 
 */
 
@@ -199,7 +203,7 @@ class Data {
 
     // Link Teachers with Colors
     const colors = Helper.getColors();
-    Data.teachers = Data.teachers.map((teacher, index) => ({ name: teacher, color: colors[index] }));
+    Data.teachers = Data.teachers.map((teacher, index) => ({ name: teacher, color: colors[index] || '#1b1464' }));
   }
 
   static getTotalPeriod() {
@@ -790,6 +794,37 @@ class UI {
     });
   }
 
+  static applyAllInputs(value) {
+    const inputs = UI.tbody.querySelectorAll("[name='fromTime'], [name='toTime'], [name='isBreak'], [name='isFree'], [name='subject'], [name='teacher']")
+    inputs.forEach(input => {
+      value
+        ? input.setAttribute('disabled', true)
+        : input.removeAttribute('disabled');
+    });
+
+    UI.disabledOnBreakOrFree();
+  }
+
+  static disabledOnBreakOrFree() {
+    const editForms = UI.tbody.querySelectorAll('td .edit-view');
+    editForms.forEach(form => {
+      const subject = form.querySelector("[name='subject']");
+      const teacher = form.querySelector("[name='teacher']");
+      const isBreak = form.querySelector("[name='isBreak']");
+      const isFree = form.querySelector("[name='isFree']");
+
+      if (isBreak.checked) {
+        subject.setAttribute('disabled', true);
+        teacher.setAttribute('disabled', true);
+        isFree.setAttribute('disabled', true);
+      } else if (isFree.checked) {
+        subject.setAttribute('disabled', true);
+        teacher.setAttribute('disabled', true);
+        isBreak.setAttribute('disabled', true);
+      }
+    });
+  }
+
   static refreshTable() {
     // Remove All the Events & Event Listener
     Helper.removeAllEventListener();
@@ -879,7 +914,8 @@ class Helper {
     flatpickr('.flatpickr', {
       dateFormat: "h:i K",
       enableTime: true,
-      noCalendar: true
+      noCalendar: true,
+      disableMobile: true,
     });
   }
 
@@ -1031,12 +1067,17 @@ class Helper {
         // Add or remove error class when its empty or repeated
         for (let i = 0; i < values.length; i++) {
           if (values.filter(value => value === values[i]).length > 1) {
-            inputs[i].classList.add('error')
+            inputs[i].classList.add('error');
           } else {
-            values[i] ? inputs[i].classList.remove('error') : inputs[i].classList.add('error');
+            if (values[i]) {
+              inputs[i].classList.remove('error');
+            } else {
+              inputs[i].classList.add('error');
+            }
           }
         }
-
+        const errorInputs = UI.tbody.querySelectorAll("th [name='title'].error");
+        UI.applyAllInputs(errorInputs.length ? true : false);
       });
     })
   }
@@ -1073,7 +1114,7 @@ class Helper {
           inputs.isFree.disabled = false;
         }
       })
-    })
+    });
   }
 
   static handleChangeOnFree() {
@@ -1102,8 +1143,8 @@ class Helper {
 }
 
 async function main() {
-  Helper.handleEditAndViewTimetable();
 
+  Helper.handleEditAndViewTimetable();
   Data.initialSetUp();
 
   // Load UI
@@ -1119,7 +1160,6 @@ async function main() {
   Helper.handleChangePeriodTitle();
   Helper.handleChangeOnBreak();
   Helper.handleChangeOnFree();
-
 }
 
 main();

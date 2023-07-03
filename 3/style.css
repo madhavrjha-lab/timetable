@@ -296,14 +296,14 @@ body {
   gap: 10px;
 }
 
-.tt-body tbody th .edit-view input[type="text"] {
+.tt-body tbody th .edit-view input {
   text-align: left;
   padding: 4px 10px;
   width: 90%;
   border: 1px solid #aaa;
 }
 
-.tt-body tbody th .edit-view input[type="text"].error {
+.tt-body tbody th .edit-view input.error {
   border: 1.5px solid red;
 }
 
